@@ -1,2 +1,2 @@
 # YouTube-Video-Browser
-# https://yt-search-zrincin.vercel.app/
+https://yt-search-zrincin.vercel.app/
