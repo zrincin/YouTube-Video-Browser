@@ -1,39 +1,38 @@
-import React, {Component} from 'react';
-import './SearchBar.css';
+import React, { useState } from "react";
+import "./SearchBar.css";
 
-class SearchBar extends Component {
-  state = { term: '' };
+const SearchBar = ({ onFormSubmit }) => {
+  const [term, setTerm] = useState("");
 
-  onInputChange = event => {
-    this.setState({ term: event.target.value });
+  const handleInputChange = (e) => {
+    setTerm(e.target.value);
   };
 
-  onFormSubmit = event => {
-    event.preventDefault();
-
-    this.props.onFormSubmit(this.state.term);
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    onFormSubmit(term);
   };
 
-  render() {
-    return (
-      <div className="search-bar ui segment secondary">
-        <form onSubmit={this.onFormSubmit} className="ui form">
-          <div className="field">
-            <label><h2>YouTube Video Browser</h2></label>
-            <div className="ui icon input">
+  return (
+    <div className="search-bar ui segment secondary">
+      <form onSubmit={handleFormSubmit} className="ui form">
+        <div className="field">
+          <label>
+            <h2>YouTube Video Browser</h2>
+          </label>
+          <div className="ui icon input">
             <input
               type="text"
               placeholder="Enter your search here..."
-              value={this.state.term}
-              onChange={this.onInputChange}
+              value={term}
+              onChange={handleInputChange}
             />
             <i class="circular search icon"></i>
-            </div>
           </div>
-        </form>
-      </div>
-    );
-  }
-}
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default SearchBar;
