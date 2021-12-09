@@ -1,0 +1,38 @@
+.field {
+  color: grey;
+  padding-bottom: 10px;
+}
+
+.video-item {
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer;
+}
+
+.video-item.item img {
+  max-width: 100px;
+}
+
+.video-item:hover {
+  background-color: whitesmoke;
+}
+
+/* DARK MODE */
+
+.dark {
+  background: black !important;
+  color: white !important;
+}
+
+.icon .dark {
+  color: white !important;
+}
+
+.video-item .dark:hover {
+  color: blue !important;
+}
+
+.footer-dark {
+  background: transparent !important;
+  color: yellowgreen;
+}
