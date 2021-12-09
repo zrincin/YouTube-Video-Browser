@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./SearchBar.css";
+import "./styles.css";
 
-const SearchBar = ({ onFormSubmit }) => {
+const SearchBar = ({ onFormSubmit, darkMode }) => {
   const [term, setTerm] = useState("");
 
   const handleInputChange = (e) => {
@@ -14,11 +14,17 @@ const SearchBar = ({ onFormSubmit }) => {
   };
 
   return (
-    <div className="search-bar ui segment secondary">
+    <div
+      className={
+        !darkMode
+          ? "search-bar ui segment secondary"
+          : "search-bar ui segment secondary dark"
+      }
+    >
       <form onSubmit={handleFormSubmit} className="ui form">
         <div className="field">
           <label>
-            <h2>YouTube Video Browser</h2>
+            <h2 className={!darkMode ? "" : "dark"}>YouTube Video Browser</h2>
           </label>
           <div className="ui icon input">
             <input
@@ -27,7 +33,11 @@ const SearchBar = ({ onFormSubmit }) => {
               value={term}
               onChange={handleInputChange}
             />
-            <i class="circular search icon"></i>
+            <i
+              className={
+                !darkMode ? "circular search icon" : "circular search icon dark"
+              }
+            ></i>
           </div>
         </div>
       </form>

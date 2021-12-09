@@ -1,13 +1,15 @@
-import React from 'react';
-import VideoItem from './VideoItem';
+import React from "react";
+import VideoItem from "./VideoItem";
+import "./styles.css";
 
-const VideoList = ({ videos, onVideoSelect }) => {
-  const renderedList = videos.map(video => {
+const VideoList = ({ videos, onVideoSelect, darkMode }) => {
+  const renderedList = videos.map((video) => {
     return (
       <VideoItem
         key={video.id.videoId}
         onVideoSelect={onVideoSelect}
         video={video}
+        darkMode={darkMode}
       />
     );
   });

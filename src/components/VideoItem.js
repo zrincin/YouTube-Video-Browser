@@ -1,16 +1,19 @@
 import React from "react";
-import "./VideoItem.css";
+import "./styles.css";
 
-const VideoItem = ({ video, onVideoSelect }) => {
+const VideoItem = ({ video, onVideoSelect, darkMode }) => {
   return (
-    <div onClick={() => onVideoSelect(video)} className="video-item item">
+    <div
+      onClick={() => onVideoSelect(video)}
+      className={!darkMode ? "video-item item" : "video-item item dark"}
+    >
       <img
         alt={video.snippet.title}
         className="ui image"
         src={video.snippet.thumbnails.medium.url}
       />
       <div className="content">
-        <div className="header">
+        <div className={!darkMode ? "header" : "header dark"}>
           {video.snippet.channelTitle}:&nbsp;&nbsp;{video.snippet.title}
         </div>
       </div>
