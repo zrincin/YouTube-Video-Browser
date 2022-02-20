@@ -84,7 +84,7 @@ const App = () => {
           textAlign: "center",
         }}
       >
-        &copy; ZrinCin, 2021.
+        &copy; ZrinCin, {new Date().getFullYear()}.
       </footer>
     </div>
   );
